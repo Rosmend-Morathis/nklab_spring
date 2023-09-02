@@ -11,7 +11,7 @@ import java.util.Objects;
 @Service
 public class UserService {
     @Autowired
-    UserRepository userRepository;
+    public UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;

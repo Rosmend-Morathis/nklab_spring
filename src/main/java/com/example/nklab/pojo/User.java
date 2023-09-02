@@ -11,7 +11,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//自增主键
     @Column(name = "user_id")
-    public int user_id;
+    public Integer user_id;
 
     public String email;
     public String username;
@@ -20,18 +20,18 @@ public class User {
     public User() {
     }
 
-    public User(int user_id, String email, String username, String password) {
+    public User(Integer user_id, String email, String username, String password) {
         this.user_id = user_id;
         this.email = email;
         this.username = username;
         this.password = password;
     }
 
-    public int getUser_id() {
+    public Integer getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(int user_id) {
+    public void setUser_id(Integer user_id) {
         this.user_id = user_id;
     }
 
