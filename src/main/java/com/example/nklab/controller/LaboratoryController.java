@@ -17,11 +17,29 @@ public class LaboratoryController {
     @Autowired
     LaboratoryService laboratoryService;
 
-    @RequestMapping(value = "/labs")
+    @RequestMapping(value = "/api/labs")
     @ResponseBody
     public List<Object> getLabs(){
         List<Object> labs = laboratoryService.findAll();
         System.out.println(labs);
         return labs;
+    }
+
+    @RequestMapping(value = "/api/findAllLabs")
+    @ResponseBody
+    public List<Object> findAllLabs(){
+        return laboratoryService.findAll();
+    }
+
+//    @RequestMapping(value = "/api/getLabByName")
+//    @ResponseBody
+//    public Laboratory getLabByName(@RequestParam String name){
+//        return laboratoryService.findLaboratoryByname(name);
+//    }
+
+    @RequestMapping(value = "/api/getLabByName")
+    @ResponseBody
+    public List<Object> getLabByName(@RequestParam String name){
+        return laboratoryService.findLaboratoryByname(name);
     }
 }

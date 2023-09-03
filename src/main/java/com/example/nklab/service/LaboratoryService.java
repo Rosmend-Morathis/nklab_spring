@@ -17,8 +17,15 @@ public class LaboratoryService {
     }
 
     public List<Object> findAll(){
-//        List<Laboratory> labs = laboratoryRepository.findAll();
-        return laboratoryRepository.findLaboratorys();
+       return laboratoryRepository.findLaboratorys();
+    }
+
+//    public Laboratory findLaboratoryByname(String name){
+//        return laboratoryRepository.findLaboratoryByLab_name(name);
+//    }
+
+    public List<Object> findLaboratoryByname(String name){
+        return laboratoryRepository.findLaboratoryByLab_name(name);
     }
 
     public Laboratory findLaboratoryById(Integer id){

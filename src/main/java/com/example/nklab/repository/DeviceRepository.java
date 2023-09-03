@@ -13,4 +13,7 @@ public interface DeviceRepository extends JpaRepository<Device, Integer> {
 
     @Query("SELECT d FROM Device d WHERE d.device_id = :device_id")
     Device findDeviceByDevice_id(@Param("device_id") Integer id);
+
+    @Query("SELECT d.device_id, d.admin.user_id, d.device_name FROM Device d")
+    List<Object> findDevices();
 }
